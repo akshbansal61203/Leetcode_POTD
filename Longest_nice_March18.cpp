@@ -2,10 +2,10 @@ class Solution {
 public:
     int longestNiceSubarray(vector<int>& nums) {
        int n=nums.size();
-       int l=0,r=0;
+       int l=0,r=1;
        int subor=0,length=1;
        while(r<n){
-       // subor|=nums[l];
+        subor|=nums[l];
         while((l<r)&&(subor&nums[r])){
             subor^=nums[l];
             l++;
